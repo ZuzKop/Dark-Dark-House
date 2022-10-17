@@ -44,7 +44,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
-               //Play reading text
+            UAP_AccessibilityManager.Say(direction.text.ToString());
         } 
     }
 
