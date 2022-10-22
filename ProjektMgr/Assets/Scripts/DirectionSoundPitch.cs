@@ -6,8 +6,6 @@ using System;
 public class DirectionSoundPitch : MonoBehaviour
 {
     public AudioSource hum;
-    private float low = 0.75f;
-    private float high = 1.25f;
 
     private float laserLength = 50f;
     private GameObject player;
@@ -17,20 +15,9 @@ public class DirectionSoundPitch : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        //StartCoroutine(ChangePitch());
         pitchValue = 1f;
     }
 
-    private IEnumerator ChangePitch()
-    {
-        yield return new WaitForSeconds(1.5f);
-
-        hum.pitch = low;
-
-        yield return new WaitForSeconds(1.5f);
-
-        hum.pitch = high;
-    }
 
     void FixedUpdate()
     {
@@ -55,11 +42,9 @@ public class DirectionSoundPitch : MonoBehaviour
                     {
                         pitchValue = hit.distance / 12f + 0.1f;
                         hitWall = true;
-                        Debug.Log(hit.transform.name);
+                        //Debug.Log(hit.transform.name);
 
                     }
-                    else if (hit.transform.tag == "Item")
-                        Debug.Log(hit.transform.name);
                 }
 
             }
