@@ -4,17 +4,21 @@ using UnityEngine;
 
 public class PickingUpKeys : MonoBehaviour
 {
-    public bool[] keys;
 
-    // Start is called before the first frame update
+    public AudioSource collectionSound;
+
+    public int keyID;
+    private GameObject GameManager;
+
     void Start()
     {
-        
+        GameManager = GameObject.FindWithTag("GameManager");
     }
 
-    // Update is called once per frame
-    void Update()
+    void OnCollisionEnter2D(Collision2D col)
     {
-        
+        GameManager.GetComponent<KeysManager>().SetKey(keyID); 
+        collectionSound.Play();
+        gameObject.SetActive(false);
     }
 }

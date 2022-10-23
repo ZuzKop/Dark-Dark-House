@@ -35,12 +35,10 @@ public class Interactables : MonoBehaviour
             {
                 if(!playingDoor)
                 {
+                    door.volume = 1 / (hit.distance + 0.1f);
                     door.Play();
-                    playingDoor = true;
-                }
-                else
-                {
                     StartCoroutine(WaitOutSoundDoor());
+                    playingDoor = true;
                 }
             }
 
@@ -59,7 +57,7 @@ public class Interactables : MonoBehaviour
 
     IEnumerator WaitOutSoundDoor()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1.3f);
         playingDoor = false;
     }
 

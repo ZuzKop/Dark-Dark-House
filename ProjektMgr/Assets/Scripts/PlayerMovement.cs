@@ -22,7 +22,7 @@ public class PlayerMovement : MonoBehaviour
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
 
-        movementSpeed = 8f;
+        movementSpeed = 2f;
         keySensitivity = 0.2f;
         mouseSensitivity = 3f;
         mouseControls = true;
@@ -72,18 +72,12 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKey("up") || Input.GetMouseButton(0))
         {
             footsteps.volume = 0.6f;
-            GetComponent<Rigidbody2D>().MovePosition(transform.position + movementSpeed * Time.deltaTime * transform.up);
+            GetComponent<Rigidbody2D>().MovePosition(transform.position + movementSpeed * Time.fixedDeltaTime * transform.up);
         }
         else
         {
             footsteps.volume = 0f;
         }
-
-        if (Input.GetKeyDown(KeyCode.LeftShift))
-        {
-            UAP_AccessibilityManager.Say(direction.text.ToString());
-        } 
-
 
     }
 
