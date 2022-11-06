@@ -1,0 +1,21 @@
+You will hear constant music.
+
+When humming is loud, that means wall you're looking at is close.
+When humming is quiet, wall you're looking at is further away.
+
+Turn around with mouse, walk forward with left mouse button, and walk backwards with right mouse button
+Alternatively, use left and right arrow keys to rotate, arrow up to walk forward and arrow down to walk backwards.
+
+During rotation, if you hear a click, that means you are facing North, South, West or East
+
+Use W, S, A, D buttons, to turn your character to face North, South, West and East respectievely.
+
+You can check what direction you're facing, by pressing shift.
+
+You can check what you have directly in front of you, by pressing ctrl.
+
+If you hear "ping" sound, you're looking at a key.
+
+If you hear a knock, you're looking at a door.
+
+Collect the key to open the door.

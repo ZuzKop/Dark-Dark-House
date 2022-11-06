@@ -15,7 +15,6 @@ public class Interactables : MonoBehaviour
     private float keyVolume;
     private float doorVolume;
 
-
     void Start()
     {
         playingDoor = false;

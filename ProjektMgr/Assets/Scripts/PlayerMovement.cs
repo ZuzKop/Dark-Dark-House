@@ -7,8 +7,8 @@ using UnityEngine.UI;
 public class PlayerMovement : MonoBehaviour
 {
     private float movementSpeed;
-    private float keySensitivity;
-    private float mouseSensitivity;
+    public float keySensitivity;
+    public float mouseSensitivity;
     public bool mouseControls;
 
     public AudioSource click;
@@ -23,7 +23,7 @@ public class PlayerMovement : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
 
         movementSpeed = 2f;
-        keySensitivity = 0.2f;
+        keySensitivity = 0.55f;
         mouseSensitivity = 3f;
         mouseControls = true;
     }
@@ -51,32 +51,40 @@ public class PlayerMovement : MonoBehaviour
             UpdateText();
         }
 
-        /*
-        if (Input.GetKeyDown("right"))
-        {
-            transform.eulerAngles += new Vector3(0f, 0f, -45f);
-            click.Play();
-            FixAngles();
-            UpdateText();
-        }
-
-        if (Input.GetKeyDown("left"))
-        {
-            transform.eulerAngles += new Vector3(0f, 0f, 45f);
-            click.Play();
-            FixAngles();
-            UpdateText();
-        }
-        */
-
         if (Input.GetKey("up") || Input.GetMouseButton(0))
         {
             footsteps.volume = 0.6f;
             GetComponent<Rigidbody2D>().MovePosition(transform.position + movementSpeed * Time.fixedDeltaTime * transform.up);
         }
+        else if (Input.GetKey("down") || Input.GetMouseButton(1))
+        {
+            footsteps.volume = 0.6f;
+            GetComponent<Rigidbody2D>().MovePosition(transform.position + movementSpeed * Time.fixedDeltaTime * (-1)*transform.up);
+        }
         else
         {
             footsteps.volume = 0f;
+        }
+
+        if(Input.GetKeyDown(KeyCode.W))
+        {
+            transform.eulerAngles = new Vector3(0f, 0f, 0f);
+            UpdateText();
+        }
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            transform.eulerAngles = new Vector3(0f, 0f, 90f);
+            UpdateText();
+        }
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            transform.eulerAngles = new Vector3(0f, 0f, 180f);
+            UpdateText();
+        }
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            transform.eulerAngles = new Vector3(0f, 0f, 270f);
+            UpdateText();
         }
 
     }
@@ -111,6 +119,7 @@ public class PlayerMovement : MonoBehaviour
         {
             if (direction.text != "North")
             {
+                click.pitch = 1f;
                 click.Play();
             }
             direction.text = "North";
@@ -123,6 +132,7 @@ public class PlayerMovement : MonoBehaviour
         {
             if (direction.text != "West")
             {
+                click.pitch = 1.3f;
                 click.Play();
             }
             direction.text = "West";
@@ -135,6 +145,7 @@ public class PlayerMovement : MonoBehaviour
         {
             if (direction.text != "South")
             {
+                click.pitch = 1.2f;
                 click.Play();
             }
             direction.text = "South";
@@ -147,6 +158,7 @@ public class PlayerMovement : MonoBehaviour
         {
             if (direction.text != "East")
             {
+                click.pitch = 1.1f;
                 click.Play();
             }
             direction.text = "East";

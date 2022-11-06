@@ -39,7 +39,7 @@ public class DirectionVolume : MonoBehaviour
                 {
                     if (hit.transform.tag == "Wall")
                     {
-                        float v = ( 1f /( hit.distance + 0.01f) ) * 0.45f ;
+                        float v = ( 1f /( hit.distance + 0.01f) ) * 0.3f ;
                         vol = v;
 
                         hitWall = true;

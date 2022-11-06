@@ -5,7 +5,6 @@ ScriptsOnlyBuild:
     - AccessibleLabel
     - AccessibleUIGroupRoot
     - CurrentLocation
-    - DirectionSoundPitch
     - DirectionVolume
     - Interactables
     - KeysManager
@@ -20,11 +19,8 @@ ScriptsOnlyBuild:
     - UnityEditor.U2D.Animation.BoneGizmo
     Unity.2D.IK.Editor.dll:
     - UnityEditor.U2D.IK.IKEditorManager
-    - UnityEditor.U2D.IK.IKGizmos
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridPaintingState
-    - UnityEditor.Tilemaps.GridPaletteBrushes
-    - UnityEditor.Tilemaps.GridPalettes
     - UnityEditor.Tilemaps.SceneViewGridManager
     - UnityEditor.Tilemaps.SceneViewOpenTilePaletteHelper
     - UnityEditor.Tilemaps.TileDragAndDropManager
@@ -183,8 +179,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 1900}
     - Class: 114
       Script: {instanceID: 2080}
-    - Class: 114
-      Script: {instanceID: 2134}
     - Class: 114
       Script: {instanceID: 2416}
     - Class: 114
@@ -348,7 +342,7 @@ ScriptsOnlyBuild:
     className: Custom_TTS_Template
   - hash:
       serializedVersion: 2
-      Hash: 2453ca2e141f1ceea9173ed23a996da5
+      Hash: 2dde8fe458a4c684cf5e579e06f0d8d3
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerMovement
@@ -384,7 +378,7 @@ ScriptsOnlyBuild:
     className: PlaymodeTestsController
   - hash:
       serializedVersion: 2
-      Hash: 1bb573caa6ffe03baf0eb36a46205e53
+      Hash: bbf90a757f5f1997b91817354aeed7c9
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: TextOnScreen
@@ -956,4 +950,4 @@ ScriptsOnlyBuild:
   scenePathNames:
   - Assets/Scenes/Intro.unity
   - Assets/Scenes/SampleScene.unity
-  playerPath: C:/Suzi/Uczelnia/Magisterka-projekt/FirstBuild/DarkDarkDarkHouse.exe
+  playerPath: C:/Suzi/Uczelnia/Magisterka-projekt/GitProjektMgr/DarkHouseBuild/DarkDarkDarkHouse.exe

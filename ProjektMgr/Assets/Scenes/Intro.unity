@@ -787,49 +787,49 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'You will hear constant humming.
+  m_text: 'You will hear constant music.
 
 
-
-    When humming is loud, that means
-    wall you''re looking at is close.
+    When humming is loud, that means wall
+    you''re looking at is close.
 
     When humming is quiet, wall you''re looking
     at is further away.
 
 
+    Turn around with mouse, walk forward with left mouse
+    button, and walk backwards with right mouse button
 
-    Turn around with mouse, or arrow keys left and right.
-
-    Walk
-    forward by pressing left mouse button, or arrow key up
-
-
-
-    During rotation,
-    if you hear a click, that means you are facing North, South, West or East
-
-    You
-    can check what direction you''re facing, by pressing shift.
+    Alternatively, use left
+    and right arrow keys to rotate, arrow up to walk forward and arrow down to walk
+    backwards.
 
 
-
-    You can check
-    what you have directly in front of you, by pressing ctrl.
-
+    During rotation, if you hear a click, that means you are facing
+    North, South, West or East
 
 
-    If you hear
-    "ping" sound, you''re looking at a key.
+    Use W, S, A, D buttons, to turn your character
+    to face North, South, West and East respectievely.
 
 
-
-    If you hear dull knock, you''re
-    looking at a door.
-
+    You can check what direction
+    you''re facing, by pressing shift.
 
 
-    Collect the key to open the door.'
+    You can check what you have directly
+    in front of you, by pressing ctrl.
+
+
+    If you hear "ping" sound, you''re looking
+    at a key.
+
+
+    If you hear a knock, you''re looking at a door.
+
+
+    Collect
+    the key to open the door.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
