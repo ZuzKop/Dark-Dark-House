@@ -12,8 +12,6 @@ public class Interactables : MonoBehaviour
     private bool playingDoor;
     private bool playingKey;
 
-    private float keyVolume;
-    private float doorVolume;
 
     void Start()
     {
@@ -51,6 +49,7 @@ public class Interactables : MonoBehaviour
                     playingKey = true;
                 }
             }
+
         }
     }
 

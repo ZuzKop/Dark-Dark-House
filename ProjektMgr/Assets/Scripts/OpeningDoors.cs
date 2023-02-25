@@ -45,6 +45,11 @@ public class OpeningDoors : MonoBehaviour
         }
     }
 
+    public int GetDoorID()
+    {
+        return doorID;
+    }
+
     IEnumerator Unlocking()
     {
         unlocking.Play();

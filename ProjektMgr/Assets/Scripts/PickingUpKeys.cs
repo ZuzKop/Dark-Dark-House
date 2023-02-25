@@ -15,6 +15,11 @@ public class PickingUpKeys : MonoBehaviour
         GameManager = GameObject.FindWithTag("GameManager");
     }
 
+    public int GetKeyID()
+    {
+        return keyID;
+    }
+
     void OnCollisionEnter2D(Collision2D col)
     {
         GameManager.GetComponent<KeysManager>().SetKey(keyID); 

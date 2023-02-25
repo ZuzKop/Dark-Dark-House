@@ -8,16 +8,19 @@ public class TextOnScreen : MonoBehaviour
     public Text direction;
     public Text location;
     public Text item;
+    public Text ghostCounter;
 
     private string itemString;
 
     private GameObject player;
+    private GameObject gameManager;
 
     // Start is called before the first frame update
     void Start()
     {
         ReadLocation();
         player = GameObject.FindGameObjectWithTag("Player");
+        gameManager = GameObject.FindWithTag("GameManager");
     }
 
 // Update is called once per frame
@@ -52,7 +55,7 @@ public class TextOnScreen : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Tab))
         {
-            UAP_AccessibilityManager.Say(location.text.ToString());
+            UAP_AccessibilityManager.Say(location.text.ToString() + ", " + ghostCounter.text.ToString() );
         }
 
         if (Input.GetKeyDown(KeyCode.LeftControl))
@@ -61,40 +64,53 @@ public class TextOnScreen : MonoBehaviour
             hit = Physics2D.Raycast(player.transform.position, player.transform.up, 50f);
             if (hit.collider != null)
             {
-                //Debug.Log(hit.transform.name);
-                if (hit.transform.tag == "Wall")
+                switch(hit.transform.tag)
                 {
-                    string dist;
+                    case "Wall":
 
-                    if (hit.distance < 1)
-                    {
-                        dist = ", very near";
-                    }
-                    else if(hit.distance < 2)
-                    {
-                        dist = ", near";
-                    }
-                    else if(hit.distance > 5)
-                    {
-                        dist = ", far";
+                        string dist;
 
-                    }
-                    else if (hit.distance > 10)
-                    {
-                        dist = ", very far";
+                        if (hit.distance < 1)
+                        {
+                            dist = ", very near";
+                        }
+                        else if (hit.distance < 2)
+                        {
+                            dist = ", near";
+                        }
+                        else if (hit.distance > 5)
+                        {
+                            dist = ", far";
 
-                    }
-                    else
-                    {
-                        dist = "";
-                    }
+                        }
+                        else if (hit.distance > 10)
+                        {
+                            dist = ", very far";
 
-                    //Debug.Log(hit.distance);
-                    itemString = hit.transform.tag + dist;
-                }
-                else
-                {
-                    itemString = hit.transform.tag;
+                        }
+                        else
+                        {
+                            dist = "";
+                        }
+
+                        //Debug.Log(hit.distance);
+                        itemString = hit.transform.tag + dist;
+                        break;
+
+                    case "Key":
+                        itemString = "Key to" + gameManager.GetComponent<KeysManager>().GetKeyName(hit.transform.gameObject.GetComponent<PickingUpKeys>().GetKeyID());
+                        break;
+                    case "Door":
+                        itemString = "Door to" + gameManager.GetComponent<KeysManager>().GetDoorName(hit.transform.gameObject.GetComponent<OpeningDoors>().GetDoorID());
+                        break;
+                    case "Ghost":
+                        itemString = hit.transform.tag + ", " + hit.transform.gameObject.GetComponent<GhostCollision>().GetHp() + " Hit Points";
+                        break;
+
+                    default:
+                        itemString = hit.transform.tag;
+                        break;
+
                 }
 
                 item.text = itemString;
@@ -146,6 +162,5 @@ public class TextOnScreen : MonoBehaviour
     public void ReadLocation()
     {
         UAP_AccessibilityManager.Say(location.text.ToString());
-
     }
 }

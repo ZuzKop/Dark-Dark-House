@@ -7,18 +7,6 @@ public class KeysManager : MonoBehaviour
     public bool[] keys;
     public bool[] doors;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void SetKey(int id)
     {
         keys[id] = true;
@@ -27,6 +15,59 @@ public class KeysManager : MonoBehaviour
     public bool GetKey(int id)
     {
         return keys[id];
+    }
+
+    public string GetKeyName(int id)
+    {
+        switch (id)
+        {
+            case 0:
+                return " room two";
+                break;
+
+            case 1:
+                return " last room";
+                break;
+
+            default:
+                return "";
+                Debug.Log("switch default case: something went wrong");
+                break;
+
+        }
+        return "";
+    }
+    public string GetDoorName(int id)
+    {
+        int roomID = gameObject.GetComponent<PlayerStatus>().GetLocation();
+
+        //if room is changed, so is the name of the door. depending on room player is in there are two variants of the name of the door
+        switch (id)
+        {
+            case 0:
+                if(roomID == 0)
+                {
+                    return " room two";
+                }
+                else if(roomID == 1)
+                {
+                    return " room one";
+                }
+                break;
+
+            case 1:
+                return " last room";
+                break;
+
+            default:
+                return "";
+                Debug.Log("switch default case: something went wrong");
+                break;
+
+        }
+
+        return "";
+
     }
 
     public bool GetDoor(int id)

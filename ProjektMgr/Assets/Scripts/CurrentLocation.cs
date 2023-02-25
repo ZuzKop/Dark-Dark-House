@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-
 public class CurrentLocation : MonoBehaviour
 {
     public Text locationText;
-    public string location;
+    private string location;
+    public int locationId;
 
     private GameObject gameManager;
 
@@ -16,26 +16,35 @@ public class CurrentLocation : MonoBehaviour
     {
         gameManager = GameObject.FindWithTag("GameManager");
 
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        switch (locationId)
+        {
+            case 0:
+                location = "Room 1";
+                break;
+            case 1:
+                location = "Room 2";
+                break;
+            default:
+                location = "room";
+                break;
+        }
     }
 
     void OnTriggerEnter2D(Collider2D col)
     {
         if(col.transform.tag == "Player")
         {
-            Debug.Log(transform.name);
             locationText.text = location;
             gameManager.GetComponent<TextOnScreen>().ReadLocation();
+            gameManager.GetComponent<PlayerStatus>().SetLocation(locationId);
 
         }
-
+        if (col.transform.tag == "Ghost")
+        {
+            gameManager.gameObject.GetComponent<GhostCounting>().AddGhost(locationId);
+              
+        }
 
     }
-
 
 }
