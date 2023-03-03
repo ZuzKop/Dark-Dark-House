@@ -9,15 +9,23 @@ public class GhostCounting : MonoBehaviour
 
     private int ghostNumber;
 
-    private int[] ghostInRooms;
+    private int locationsNumber;
+    private List<int> ghostInRooms = new List<int>();
 
     private GameObject gameManager;
+
 
     private void Start()
     {
         gameManager = GameObject.FindGameObjectWithTag("GameManager");
         ghostNumber = 0;
-        ghostInRooms = new int[2] { 0, 0};
+
+        locationsNumber = gameManager.GetComponent<PlayerStatus>().GetLocationNumber();
+
+        for(int i=0; i<locationsNumber; i++ )
+        {
+            ghostInRooms.Add(0);
+        }
     }
     public void AddGhost(int roomId)
     {

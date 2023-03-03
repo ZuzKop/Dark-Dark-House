@@ -19,27 +19,31 @@ public class KeysManager : MonoBehaviour
 
     public string GetKeyName(int id)
     {
+        string txt = "";
+
         switch (id)
         {
             case 0:
-                return " room two";
+                txt = " room two";
                 break;
 
             case 1:
-                return " last room";
+                txt = " last room";
                 break;
 
             default:
-                return "";
+                txt = "";
                 Debug.Log("switch default case: something went wrong");
                 break;
 
         }
-        return "";
+        return txt;
     }
     public string GetDoorName(int id)
     {
         int roomID = gameObject.GetComponent<PlayerStatus>().GetLocation();
+
+        string txt = "";
 
         //if room is changed, so is the name of the door. depending on room player is in there are two variants of the name of the door
         switch (id)
@@ -47,26 +51,26 @@ public class KeysManager : MonoBehaviour
             case 0:
                 if(roomID == 0)
                 {
-                    return " room two";
+                    txt = " room two";
                 }
                 else if(roomID == 1)
                 {
-                    return " room one";
+                    txt = " room one";
                 }
                 break;
 
             case 1:
-                return " last room";
+                txt = " last room";
                 break;
 
             default:
-                return "";
+                txt = "";
                 Debug.Log("switch default case: something went wrong");
                 break;
 
         }
 
-        return "";
+        return txt;
 
     }
 

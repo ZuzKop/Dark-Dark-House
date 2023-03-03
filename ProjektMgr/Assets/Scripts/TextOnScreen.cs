@@ -15,12 +15,16 @@ public class TextOnScreen : MonoBehaviour
     private GameObject player;
     private GameObject gameManager;
 
+    private int lvlId;
+
     // Start is called before the first frame update
     void Start()
     {
         ReadLocation();
         player = GameObject.FindGameObjectWithTag("Player");
         gameManager = GameObject.FindWithTag("GameManager");
+
+        lvlId = gameManager.GetComponent<PlayerStatus>().GetLevelId();
     }
 
 // Update is called once per frame
@@ -55,7 +59,36 @@ public class TextOnScreen : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Tab))
         {
-            UAP_AccessibilityManager.Say(location.text.ToString() + ", " + ghostCounter.text.ToString() );
+            if(lvlId == 1)
+            {
+                string sayThis;
+
+                switch(gameManager.GetComponent<PlayerStatus>().GetLocation())
+                {
+                    case 0:
+                        sayThis = "Move the camera to find the knock sound. It means you're looking at a door. Approach it to enter the next room. ";
+                        break;
+                    case 1:
+                        sayThis = "If you find the ding sound, that means you're looking at a key. Collect it so you can unlock closed doors.";
+                        break;
+                    case 2:
+                        sayThis = "Ghosts";
+                        break;
+                    default:
+                        sayThis = "";
+                        break;
+                }
+
+            }
+            else if (lvlId == 2)
+            {
+
+            }
+            else if(lvlId > 2)
+            {
+                UAP_AccessibilityManager.Say(location.text.ToString() + ", " + ghostCounter.text.ToString() );
+            }
+
         }
 
         if (Input.GetKeyDown(KeyCode.LeftControl))
