@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <LangVersion>latest</LangVersion>
+    <LangVersion>8.0</LangVersion>
   </PropertyGroup>
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -47,11 +47,14 @@
   <PropertyGroup>
     <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <UnityProjectGenerator>Package</UnityProjectGenerator>
-    <UnityProjectGeneratorVersion>2.0.11</UnityProjectGeneratorVersion>
+    <UnityProjectGeneratorVersion>2.0.17</UnityProjectGeneratorVersion>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows64:19</UnityBuildTarget>
     <UnityVersion>2020.3.23f1</UnityVersion>
   </PropertyGroup>
+  <ItemGroup>
+    <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
+  </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\UAP\Scripts\UI Components\AccessibleUIGroupRoot.cs" />
     <Compile Include="Assets\Scripts\KeysManager.cs" />
@@ -59,19 +62,26 @@
     <Compile Include="Assets\UAP\Plugins\CustomTTS\Custom_TTS_Template.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\DirectionSoundPitch.cs" />
+    <Compile Include="Assets\UAP\Examples\UI Navigation Example\Scripts\DemoHelper.cs" />
     <Compile Include="Assets\UAP\Scripts\Utility\UAP_SelectionGroup.cs" />
     <Compile Include="Assets\Scripts\TextOnScreen.cs" />
     <Compile Include="Assets\Scripts\DetectingGhosts.cs" />
     <Compile Include="Assets\UAP\Scripts\Core\UAP_BaseElement_3D.cs" />
+    <Compile Include="Assets\UAP\Examples\Match 3 Game Example\Scripts\gameplay.cs" />
+    <Compile Include="Assets\UAP\Examples\UI Navigation Example\Scripts\PlatformTextSwitcher.cs" />
+    <Compile Include="Assets\UAP\Examples\Match 3 Game Example\Scripts\instructions.cs" />
     <Compile Include="Assets\UAP\Plugins\iOS\iOSTTS.cs" />
     <Compile Include="Assets\UAP\Scripts\UI Components\AccessibleLabel_3D.cs" />
     <Compile Include="Assets\UAP\Plugins\CustomTTS\WebSpeechAPI_TTS.cs" />
     <Compile Include="Assets\Scripts\GhostCollision.cs" />
     <Compile Include="Assets\Scripts\PickingUpKeys.cs" />
     <Compile Include="Assets\Scripts\HeartbeatRadius.cs" />
+    <Compile Include="Assets\UAP\Examples\Match 3 Game Example\Scripts\pausemenu.cs" />
     <Compile Include="Assets\UAP\Plugins\CustomTTS\Google_TTS.cs" />
+    <Compile Include="Assets\UAP\Examples\Match 3 Game Example\Scripts\mainmenu.cs" />
     <Compile Include="Assets\UAP\Scripts\Utility\UAP_GameObjectEnabler.cs" />
     <Compile Include="Assets\Scripts\PlayerStatus.cs" />
+    <Compile Include="Assets\UAP\Examples\Match 3 Game Example\Scripts\accessibilitysettings.cs" />
     <Compile Include="Assets\UAP\Plugins\Android\AndroidTTS.cs" />
     <Compile Include="Assets\UAP\Scripts\UI Components\AccessibleToggle.cs" />
     <Compile Include="Assets\UAP\Scripts\Utility\UAP_ScrollControl.cs" />
@@ -81,6 +91,8 @@
     <Compile Include="Assets\UAP\Plugins\iOS\iOSGestures.cs" />
     <Compile Include="Assets\UAP\Scripts\Core\UAP_AudioQueue.cs" />
     <Compile Include="Assets\Scripts\Interactables.cs" />
+    <Compile Include="Assets\Scripts\GameOver.cs" />
+    <Compile Include="Assets\UAP\Examples\Match 3 Game Example\Scripts\gameover.cs" />
     <Compile Include="Assets\UAP\Scripts\UI Components\AccessibleButton_3D.cs" />
     <Compile Include="Assets\UAP\Plugins\MacOS\MacOSTTS.cs" />
     <Compile Include="Assets\UAP\Scripts\Core\UAP_VirtualKeyboard.cs" />
@@ -93,10 +105,11 @@
     <Compile Include="Assets\UAP\Scripts\Utility\UAP_BackCloseEventListener.cs" />
     <Compile Include="Assets\Scripts\OpeningDoors.cs" />
     <Compile Include="Assets\UAP\Scripts\UI Components\AccessibleButton.cs" />
+    <Compile Include="Assets\UAP\Examples\3D Objects Example\Scripts\uGUI3DExampleGameLogic.cs" />
     <Compile Include="Assets\UAP\Plugins\x86_64\WindowsTTS.cs" />
     <Compile Include="Assets\Scripts\GhostCounting.cs" />
     <Compile Include="Assets\UAP\Scripts\UI Components\AccessiblePluginToggle.cs" />
-    <Compile Include="Assets\Scripts\GameOver.cs" />
+    <Compile Include="Assets\UAP\Examples\Match 3 Game Example\Scripts\gridpanel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

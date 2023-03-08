@@ -33,12 +33,12 @@ public class GameOver : MonoBehaviour
         {
             if(dead)
             {
-                Application.LoadLevel(Application.loadedLevel);
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             }
             else if(tutorialWin)
             {
                 Debug.Log("Restart");
-                Application.LoadLevel(0);
+                SceneManager.LoadScene(0);
             }
         }
     }

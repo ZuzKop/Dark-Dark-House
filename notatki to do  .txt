@@ -1,0 +1,10 @@
+Long term plan:
+
+0. Pause menu.
+1. Easy, normal and hard mode (starting with hard and then downgrading).
+2. Full UI with compatibility
+3. Settings:
+	Keyboard/mouse inputs
+4. Testing
+5. Changes based on feedback.	
+
