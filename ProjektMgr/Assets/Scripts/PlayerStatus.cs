@@ -12,7 +12,7 @@ public class PlayerStatus : MonoBehaviour
     private int locationsNumber;
 
 
-    void Start()
+    void Awake()
     {
         levelId = SceneManager.GetActiveScene().buildIndex;
 

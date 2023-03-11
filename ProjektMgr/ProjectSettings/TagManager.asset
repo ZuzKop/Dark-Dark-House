@@ -11,6 +11,7 @@ TagManager:
   - GameManager
   - Ghost
   - Location
+  - Gun
   layers:
   - Default
   - TransparentFX
