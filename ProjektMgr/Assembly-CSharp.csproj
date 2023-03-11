@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\UAP\Scripts\UI Components\AccessibleUIGroupRoot.cs" />
+    <Compile Include="Assets\Scripts\PickingUpGun.cs" />
     <Compile Include="Assets\Scripts\KeysManager.cs" />
     <Compile Include="Assets\Scripts\CurrentLocation.cs" />
     <Compile Include="Assets\UAP\Plugins\CustomTTS\Custom_TTS_Template.cs" />

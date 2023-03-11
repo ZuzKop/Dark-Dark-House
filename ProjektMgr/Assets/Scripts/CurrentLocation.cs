@@ -83,14 +83,14 @@ public class CurrentLocation : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        if(col.transform.tag == "Player")
+        if (col.transform.tag == "Player")
         {
             locationText.text = location;
             gameManager.GetComponent<TextOnScreen>().ReadLocation();
             gameManager.GetComponent<PlayerStatus>().SetLocation(locationId);
 
 
-            if(lvlId == 1)
+            if (lvlId == 1)
             {
                 string tutorialText;
 

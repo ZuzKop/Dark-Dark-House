@@ -55,7 +55,7 @@ public class GhostCounting : MonoBehaviour
     }
     public void UpdateGhostCounter()
     {
-        if(lvlId != 1)
+        if(lvlId != 1 && lvlId != 2)
         {
             ghostCounting.text = "Ghosts in this room: " + ghostInRooms[gameManager.GetComponent<PlayerStatus>().GetLocation()] + ", Total Ghosts: " + ghostNumber;
         }

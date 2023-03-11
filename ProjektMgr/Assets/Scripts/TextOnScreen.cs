@@ -9,6 +9,7 @@ public class TextOnScreen : MonoBehaviour
     public Text location;
     public Text item;
     public Text ghostCounter;
+    public Text pickUpKey;
 
     private string itemString;
 
@@ -25,6 +26,12 @@ public class TextOnScreen : MonoBehaviour
         gameManager = GameObject.FindWithTag("GameManager");
 
         lvlId = gameManager.GetComponent<PlayerStatus>().GetLevelId();
+
+        if(lvlId == 2)
+        {
+            ghostCounter.text = "Find a ghost-hunting gun to kill a ghost locked up in the basement cell.";
+        }
+
     }
 
 // Update is called once per frame
@@ -106,9 +113,17 @@ public class TextOnScreen : MonoBehaviour
                         break;
                     case "Door":
                         itemString = "Door to" + gameManager.GetComponent<KeysManager>().GetDoorName(hit.transform.gameObject.GetComponent<OpeningDoors>().GetDoorID());
+
+                        if(!gameManager.GetComponent<KeysManager>().GetKey(hit.transform.gameObject.GetComponent<OpeningDoors>().GetDoorID()))
+                        {
+                            itemString += ", locked";
+                        }
                         break;
                     case "Ghost":
                         itemString = hit.transform.tag + ", " + hit.transform.gameObject.GetComponent<GhostCollision>().GetHp() + " Hit Points";
+                        break;
+                    case "Gun":
+                        itemString = "Ghost-hunting " + hit.transform.tag;
                         break;
 
                     default:
@@ -125,6 +140,37 @@ public class TextOnScreen : MonoBehaviour
         }
     }
 
+    public void UpdateQuestText()
+    {
+        ghostCounter.text = "Kill a ghost locked up in the basement cell with a ghost-hunting gun.";
+        UAP_AccessibilityManager.Say(ghostCounter.text);
+    }
+
+    public void PickUpKeyText(int keyId)
+    {
+        pickUpKey.text = "Key to" + gameManager.GetComponent<KeysManager>().GetKeyName(keyId);
+        UAP_AccessibilityManager.Say("Key to" + gameManager.GetComponent<KeysManager>().GetKeyName(keyId));
+        StartCoroutine(KeyTextFade());
+
+    }
+    IEnumerator KeyTextFade()
+    {
+        Color col = direction.color;
+        col.a = 1.0f;
+        pickUpKey.color = col;
+
+        yield return new WaitForSeconds(0.5f);
+
+        while (col.a >= 0.0f)
+        {
+            col.a -= 0.004f;
+            pickUpKey.color = col;
+            yield return null;
+        }
+
+        col.a = 0.0f;
+        pickUpKey.color = col;
+    }
     IEnumerator DirectionTextFade()
     {
         Color col = direction.color;

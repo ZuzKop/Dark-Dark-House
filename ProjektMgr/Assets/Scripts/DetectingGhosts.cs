@@ -12,6 +12,7 @@ public class DetectingGhosts : MonoBehaviour
     public AudioSource locked;
 
     private GameObject player;
+    private GameObject gameManager;
 
     private bool cooldown;
 
@@ -20,6 +21,7 @@ public class DetectingGhosts : MonoBehaviour
     {
         cooldown = false;
         player = GameObject.FindGameObjectWithTag("Player");
+        gameManager = GameObject.FindGameObjectWithTag("GameManager");
         ghostMoan.volume = 0f;
         
     }
@@ -34,7 +36,7 @@ public class DetectingGhosts : MonoBehaviour
             {
                 ghostMoan.volume = 1 / (hit.distance + 0.1f);
 
-                if (Input.GetKeyDown("space"))
+                if (Input.GetKeyDown("space") && gameManager.GetComponent<PlayerStatus>().DoHasGun())
                 {
                     if(!cooldown)
                     {
@@ -54,8 +56,9 @@ public class DetectingGhosts : MonoBehaviour
             }
             else
             {
-                if (Input.GetKeyDown("space"))
+                if (Input.GetKeyDown("space") && gameManager.GetComponent<PlayerStatus>().DoHasGun())
                 {
+
                     if (!cooldown)
                     {
                         cooldown = true;
@@ -76,7 +79,7 @@ public class DetectingGhosts : MonoBehaviour
         }
         else //this almost never happens
         {
-            if (Input.GetKeyDown("space"))
+            if (Input.GetKeyDown("space") && gameManager.GetComponent<PlayerStatus>().DoHasGun())
             {
                 if (!cooldown)
                 {

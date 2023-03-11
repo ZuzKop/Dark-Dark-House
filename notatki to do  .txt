@@ -1,10 +1,10 @@
 Short term:
 
 1. Pause menu
-2. Picking up gun in easy mode
-3. Download win sound.
 4. Playtest easy mode 
-5. swithes (doors to ect.)
+7. Items in this room counter
+when paused, silence music and not reset it
+main menu music
 
 
 Long term plan:

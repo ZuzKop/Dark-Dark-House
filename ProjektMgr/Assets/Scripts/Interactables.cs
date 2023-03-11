@@ -6,11 +6,13 @@ public class Interactables : MonoBehaviour
 {
     public AudioSource door;
     public AudioSource key;
+    public AudioSource gun;
 
     private GameObject player;
 
     private bool playingDoor;
     private bool playingKey;
+    private bool playingGun;
 
 
     void Start()
@@ -50,6 +52,17 @@ public class Interactables : MonoBehaviour
                 }
             }
 
+            if (hit.transform.tag == "Gun")
+            {
+                if (!playingGun)
+                {
+                    key.volume = 1 / ((hit.distance + 0.1f) * 2);
+                    gun.Play();
+                    StartCoroutine(WaitOutSoundGun());
+                    playingGun = true;
+                }
+            }
+
         }
     }
 
@@ -63,5 +76,10 @@ public class Interactables : MonoBehaviour
     {
         yield return new WaitForSeconds(1.3f);
         playingKey = false;
+    }
+    IEnumerator WaitOutSoundGun()
+    {
+        yield return new WaitForSeconds(1f);
+        playingGun = false;
     }
 }

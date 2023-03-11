@@ -8,11 +8,11 @@ public class PickingUpKeys : MonoBehaviour
     public AudioSource collectionSound;
 
     public int keyID;
-    private GameObject GameManager;
+    private GameObject gameManager;
 
     void Start()
     {
-        GameManager = GameObject.FindWithTag("GameManager");
+        gameManager = GameObject.FindWithTag("GameManager");
     }
 
     public int GetKeyID()
@@ -22,8 +22,9 @@ public class PickingUpKeys : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D col)
     {
-        GameManager.GetComponent<KeysManager>().SetKey(keyID); 
+        gameManager.GetComponent<KeysManager>().SetKey(keyID); 
         collectionSound.Play();
+        gameManager.GetComponent<TextOnScreen>().PickUpKeyText(keyID);
         gameObject.SetActive(false);
     }
 }
