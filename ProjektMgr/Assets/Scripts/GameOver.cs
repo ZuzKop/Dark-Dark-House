@@ -86,9 +86,13 @@ public class GameOver : MonoBehaviour
         {
             textTutorialOver.GetComponent<Text>().text = "Totorial completed. Press Enter to return to main menu.";
         }
-        else
+        if(lvlId == 2)
         {
-            textTutorialOver.GetComponent<Text>().text = "You win, the house is safe now. Press Enter to start Over.";
+            textTutorialOver.GetComponent<Text>().text = "You win, the house is safe now. Press Enter to return to main menu.";
+        }
+        if (lvlId == 3)
+        {
+            textTutorialOver.GetComponent<Text>().text = "You win, you escaped the labirynth. Press Enter to return to main menu.";
         }
 
         allSounds.SetActive(false);
@@ -100,9 +104,13 @@ public class GameOver : MonoBehaviour
         {
             UAP_AccessibilityManager.Say("Totorial completed. Press Enter to return to main menu.");
         }
-        else
+        if(lvlId == 2)
         {
-            UAP_AccessibilityManager.Say("You win, the house is safe now. Press Enter to start Over.");
+            UAP_AccessibilityManager.Say("You win, the house is safe now. Press Enter to return to main menu.");
+        }
+        if (lvlId == 3)
+        {
+            UAP_AccessibilityManager.Say("You win, you escaped the labirynth. Press Enter to return to main menu.");
         }
         skippable = true;
         tutorialWin = true;

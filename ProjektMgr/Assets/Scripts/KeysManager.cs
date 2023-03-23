@@ -30,7 +30,7 @@ public class KeysManager : MonoBehaviour
     {
         string txt = "";
 
-        if(lvlId == 1)
+        if(lvlId == 1 || lvlId == 3)
         {
             switch (id)
             {
@@ -39,6 +39,25 @@ public class KeysManager : MonoBehaviour
                     break;
 
                 case 1:
+                    if(lvlId == 1)
+                    {
+                        txt = " last room";
+                    }
+                    else
+                    {
+                        txt = " room three";
+                    }
+                    break;
+
+                case 2:
+                    txt = " room four";
+                    break;
+
+                case 3:
+                    txt = " room five";
+                    break;
+
+                case 4:
                     txt = " last room";
                     break;
 
@@ -87,7 +106,7 @@ public class KeysManager : MonoBehaviour
 
         //if room is changed, so is the name of the door. depending on room player is in there are two variants of the name of the door
 
-        if(lvlId == 1)
+        if(lvlId == 1 || lvlId == 3)
         {
             switch (id)
             {
@@ -110,6 +129,39 @@ public class KeysManager : MonoBehaviour
                     else if (roomID == 2)
                     {
                         txt = " room two";
+                    }
+                    break;
+
+                case 2:
+                    if (roomID == 2)
+                    {
+                        txt = " room four";
+                    }
+                    else if (roomID == 3)
+                    {
+                        txt = " room three";
+                    }
+                    break;
+
+                case 3:
+                    if (roomID == 3)
+                    {
+                        txt = " room five";
+                    }
+                    else if (roomID == 4)
+                    {
+                        txt = " room four";
+                    }
+                    break;
+
+                case 4:
+                    if (roomID == 4)
+                    {
+                        txt = " room six";
+                    }
+                    else if (roomID == 5)
+                    {
+                        txt = " room five";
                     }
                     break;
 

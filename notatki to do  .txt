@@ -5,6 +5,14 @@ Short term:
 7. Items in this room counter
 when paused, silence music and not reset it
 main menu music
+fix doooooors
+
+level two:
+pressing backspace makes character go back to the beggining of the room
+...save option and checkpoints for the rooms (that delete progress of collecting key)
+(if you add this, add it to the intro)
+
+you can hear heartbeat through walls
 
 
 Long term plan:

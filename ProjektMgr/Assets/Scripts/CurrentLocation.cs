@@ -20,7 +20,7 @@ public class CurrentLocation : MonoBehaviour
         lvlId = gameManager.GetComponent<PlayerStatus>().GetLevelId();
 
         
-        if(lvlId == 1)
+        if(lvlId == 1 || lvlId == 3)
          {   
             switch (locationId)
             {
@@ -32,6 +32,15 @@ public class CurrentLocation : MonoBehaviour
                     break;
                 case 2:
                     location = "Room 3";
+                    break;
+                case 3:
+                    location = "Room 4";
+                    break;
+                case 4:
+                    location = "Room 5";
+                    break;
+                case 5:
+                    location = "Final room";
                     break;
                 default:
                     location = "room";
@@ -112,7 +121,6 @@ public class CurrentLocation : MonoBehaviour
 
                 statusText.text = tutorialText;
             }
-
 
         }
         if (col.transform.tag == "Ghost")

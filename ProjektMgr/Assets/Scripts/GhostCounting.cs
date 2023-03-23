@@ -55,7 +55,8 @@ public class GhostCounting : MonoBehaviour
     }
     public void UpdateGhostCounter()
     {
-        if(lvlId != 1 && lvlId != 2)
+        //jak bedzie lvl kiedy to bedzie uzyteczne to wtedy dac warunek lvlid== np. 5
+        if(lvlId != 1 && lvlId != 2 && lvlId != 3)
         {
             ghostCounting.text = "Ghosts in this room: " + ghostInRooms[gameManager.GetComponent<PlayerStatus>().GetLocation()] + ", Total Ghosts: " + ghostNumber;
         }

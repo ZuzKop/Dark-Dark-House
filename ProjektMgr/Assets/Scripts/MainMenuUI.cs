@@ -22,6 +22,10 @@ public class MainMenuUI : MonoBehaviour
     {
         SceneManager.LoadScene(2);
     }
+        public void PlayNormal()
+    {
+        SceneManager.LoadScene(3);
+    }
 
     public void ReturnToMainMenu()
     {
