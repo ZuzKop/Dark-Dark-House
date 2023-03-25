@@ -110,7 +110,6 @@ public class PlayerStatus : MonoBehaviour
         return locationsNumber;
     }
 
-
     public int GetLevelId()
     {
         return levelId;

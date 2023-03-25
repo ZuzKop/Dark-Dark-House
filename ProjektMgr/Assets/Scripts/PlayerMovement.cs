@@ -9,7 +9,6 @@ public class PlayerMovement : MonoBehaviour
     private float movementSpeed;
     public float keySensitivity;
     public float mouseSensitivity;
-    public bool mouseControls;
 
     public AudioSource click;
     public AudioSource footsteps;
@@ -25,53 +24,81 @@ public class PlayerMovement : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
 
         movementSpeed = 2f;
-        keySensitivity = 0.55f;
-        mouseSensitivity = 3f;
-        mouseControls = true;
+
+        keySensitivity = PlayerPrefs.GetFloat("keyboardSensitivity");
+        mouseSensitivity = PlayerPrefs.GetFloat("mouseSensitivity");
 
         gameManager = GameObject.FindGameObjectWithTag("GameManager");
 
     }
 
+    public void ChangeCameraSensitivity()
+    {
+        keySensitivity = PlayerPrefs.GetFloat("keyboardSensitivity");
+        mouseSensitivity = PlayerPrefs.GetFloat("mouseSensitivity");
+    }
+
     // Update is called once per frame
     void Update()
     {
-        if(!gameManager.GetComponent<PlayerStatus>().IsPaused())
+        if (!gameManager.GetComponent<PlayerStatus>().IsPaused())
         {
             //keyboard
-            if (Input.GetKey("right"))
+            if(PlayerPrefs.GetInt("mouseInput") == 0)
             {
-                transform.eulerAngles += new Vector3(0f, 0f, -1f * keySensitivity);
-                UpdateText();
+                if (Input.GetKey("right"))
+                {
+                    transform.eulerAngles += new Vector3(0f, 0f, -1f * keySensitivity);
+                    UpdateText();
+                }
+
+                if (Input.GetKey("left"))
+                {
+                    transform.eulerAngles += new Vector3(0f, 0f, 1f * keySensitivity);
+                    UpdateText();
+                }
+
+                if (Input.GetKey("up"))
+                {
+                    footsteps.volume = 0.6f;
+                    GetComponent<Rigidbody2D>().MovePosition(transform.position + movementSpeed * Time.fixedDeltaTime * transform.up);
+                }
+                else if (Input.GetKey("down"))
+                {
+                    footsteps.volume = 0.6f;
+                    GetComponent<Rigidbody2D>().MovePosition(transform.position + movementSpeed * Time.fixedDeltaTime * (-1) * transform.up);
+                }
+                else
+                {
+                    footsteps.volume = 0f;
+                }
             }
 
-            if (Input.GetKey("left"))
-            {
-                transform.eulerAngles += new Vector3(0f, 0f, 1f * keySensitivity);
-                UpdateText();
-            }
 
             //mouse
-            if(mouseControls)
+            if (PlayerPrefs.GetInt("mouseInput") == 1)
             {
+
                 transform.Rotate(0, 0, -Input.GetAxis("Mouse X") * mouseSensitivity);
                 UpdateText();
+
+                if (Input.GetMouseButton(0))
+                {
+                    footsteps.volume = 0.6f;
+                    GetComponent<Rigidbody2D>().MovePosition(transform.position + movementSpeed * Time.fixedDeltaTime * transform.up);
+                }
+                else if (Input.GetMouseButton(1))
+                {
+                    footsteps.volume = 0.6f;
+                    GetComponent<Rigidbody2D>().MovePosition(transform.position + movementSpeed * Time.fixedDeltaTime * (-1) * transform.up);
+                }
+                else
+                {
+                    footsteps.volume = 0f;
+                }
+
             }
 
-            if (Input.GetKey("up") || Input.GetMouseButton(0))
-            {
-                footsteps.volume = 0.6f;
-                GetComponent<Rigidbody2D>().MovePosition(transform.position + movementSpeed * Time.fixedDeltaTime * transform.up);
-            }
-            else if (Input.GetKey("down") || Input.GetMouseButton(1))
-            {
-                footsteps.volume = 0.6f;
-                GetComponent<Rigidbody2D>().MovePosition(transform.position + movementSpeed * Time.fixedDeltaTime * (-1)*transform.up);
-            }
-            else
-            {
-                footsteps.volume = 0f;
-            }
 
             if(Input.GetKeyDown(KeyCode.W))
             {

@@ -79,6 +79,7 @@
     <Compile Include="Assets\Scripts\HeartbeatRadius.cs" />
     <Compile Include="Assets\UAP\Examples\Match 3 Game Example\Scripts\pausemenu.cs" />
     <Compile Include="Assets\UAP\Plugins\CustomTTS\Google_TTS.cs" />
+    <Compile Include="Assets\Scripts\Checkpoints.cs" />
     <Compile Include="Assets\UAP\Examples\Match 3 Game Example\Scripts\mainmenu.cs" />
     <Compile Include="Assets\UAP\Scripts\Utility\UAP_GameObjectEnabler.cs" />
     <Compile Include="Assets\Scripts\PlayerStatus.cs" />
@@ -95,6 +96,7 @@
     <Compile Include="Assets\Scripts\GameOver.cs" />
     <Compile Include="Assets\UAP\Examples\Match 3 Game Example\Scripts\gameover.cs" />
     <Compile Include="Assets\UAP\Scripts\UI Components\AccessibleButton_3D.cs" />
+    <Compile Include="Assets\Scripts\SetVolume.cs" />
     <Compile Include="Assets\UAP\Plugins\MacOS\MacOSTTS.cs" />
     <Compile Include="Assets\UAP\Scripts\Core\UAP_VirtualKeyboard.cs" />
     <Compile Include="Assets\UAP\Scripts\UI Components\AccessibleLabel.cs" />

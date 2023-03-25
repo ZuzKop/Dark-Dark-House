@@ -21,6 +21,12 @@ public class KeysManager : MonoBehaviour
         keys[id] = true;
     }
 
+    public void UnsetKey(int id)
+    {
+        keys[id] = false;
+
+    }
+
     public bool GetKey(int id)
     {
         return keys[id];
@@ -285,6 +291,10 @@ public class KeysManager : MonoBehaviour
     public void SetDoor(int id)
     {
         doors[id] = true;
+    }
+    public void UnsetDoor(int id)
+    {
+        doors[id] = false;
     }
 
 }

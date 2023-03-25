@@ -1,19 +1,17 @@
 Short term:
-
-1. Pause menu
-4. Playtest easy mode 
-7. Items in this room counter
+ 
+'Items in this room' counter
 when paused, silence music and not reset it
 main menu music
 fix doooooors
+issue: you can hear heartbeat through walls
+want: when finishing lvl, 'escape' returns player to main menu instead of pausing
 
-level two:
-pressing backspace makes character go back to the beggining of the room
-...save option and checkpoints for the rooms (that delete progress of collecting key)
-(if you add this, add it to the intro)
+checkpoints:
+-collect and open all doors before loaded checkpoints
 
-you can hear heartbeat through walls
-
+25: settings, checkpoints -> 90% done <3
+26: polish and testing -> send game to testing
 
 Long term plan:
 
