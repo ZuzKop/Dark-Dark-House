@@ -1,28 +1,15 @@
-Short term:
- 
-'Items in this room' counter
-when paused, silence music and not reset it
-main menu music
-fix doooooors
-issue: you can hear heartbeat through walls
-want: when finishing lvl, 'escape' returns player to main menu instead of pausing
+currently working on: UI 
 
-checkpoints:
--collect and open all doors before loaded checkpoints
+issues:
+-you can hear heartbeat through walls
+-when finishing lvl, 'escape' player should return  to main menu instead of pausing
+-jak wcisnie sie "escape" w settings to gra się "odpałzowuje" ale settings sie nie wylaczaja
+-doooooors
 
-25: settings, checkpoints -> 90% done <3
-26: polish and testing -> send game to testing
+needs:
+-easy, medium, hard -> level one, two and three
+-main menu music
 
-Long term plan:
-
-1. Easy, normal and hard mode (starting with hard and then downgrading or 2 different homes for easy and non-easy).
-
-2. Full UI with compatibility
-
-3. Settings:
-	Keyboard/mouse inputs
-	
-4. Testing
-
-5. Changes based on feedback.	
-
+wants:
+-'Items in this room' counter
+-przed poziomem dac moze opis slowny jak wyglada plan domu?

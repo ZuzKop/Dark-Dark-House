@@ -133,6 +133,7 @@
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
     <None Include="Assets\UAP\Plugins\x86_64\WindowsTTS.dll" />
+    <None Include="Assets\Fonts\Gelasio\OFL.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
     <None Include="Assets\UAP\Plugins\x86_64\nvdaControllerClient.dll" />

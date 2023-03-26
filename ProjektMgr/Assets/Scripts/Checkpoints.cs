@@ -17,6 +17,8 @@ public class Checkpoints : MonoBehaviour
 
     private void Start()
     {
+        gameManager = GameObject.FindGameObjectWithTag("GameManager");
+
         allChildren = nodeParent.GetComponentsInChildren<Transform>();
 
         foreach (Transform child in allChildren)
@@ -29,7 +31,6 @@ public class Checkpoints : MonoBehaviour
             SpawnPlayerOnCheckpoint();
         }
 
-        gameManager = GameObject.FindGameObjectWithTag("GameManager");
 
         checkpointReached = PlayerPrefs.GetInt("checkpointReached", 1);
 
@@ -55,25 +56,22 @@ public class Checkpoints : MonoBehaviour
 
     private void Update()
     {
-        int thisLocation = GetComponent<CurrentLocation>().GetLocationId();
-        int playerLocation = gameManager.GetComponent<PlayerStatus>().GetLocation();
-
-
         if (Input.GetKeyDown(KeyCode.Backspace))
         {
+            int thisLocation = GetComponent<CurrentLocation>().GetLocationId();
             checkpointReached = PlayerPrefs.GetInt("checkpointReached");
 
             player.transform.position = allChildren[checkpointReached].transform.position;
 
-            if(checkpointReached != 6)
+            thisLocation = GetComponent<CurrentLocation>().GetLocationId();
+
+            if (checkpointReached != 6 && thisLocation == checkpointReached - 1)
             {
-                if ( thisLocation == playerLocation)
-                {
-                    key.SetActive(true);
+                Debug.Log(thisLocation + ", " + checkpointReached );
+                key.SetActive(true);
 
-                    DealWithKeys(checkpointReached);
-                }
-
+                DealWithKeys(checkpointReached);
+                
                 gameManager.GetComponent<KeysManager>().UnsetKey(PlayerPrefs.GetInt("checkpointReached") - 1);
                 gameManager.GetComponent<KeysManager>().UnsetDoor(PlayerPrefs.GetInt("checkpointReached") - 1);
             }
@@ -90,9 +88,21 @@ public class Checkpoints : MonoBehaviour
 
     }
 
-    private void DealWithKeys(int respawnPoint)
+    private void DealWithKeys(int point)
     {
-        //deal with keys lol
+        point -= 2;
+
+        for (int i = point; i >= 0; i--)
+        {
+            gameManager.GetComponent<KeysManager>().SetKey(i);
+            gameManager.GetComponent<KeysManager>().SetDoor(i);
+
+            if(i == GetComponent<CurrentLocation>().GetLocationId())
+            {
+                key.SetActive(false);
+            }
+        }
+
     }
 
 
