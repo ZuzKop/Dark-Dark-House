@@ -84,8 +84,6 @@ public class CurrentLocation : MonoBehaviour
             }
         }
 
-        Debug.Log(location);
-
     }
 
     void OnTriggerEnter2D(Collider2D col)

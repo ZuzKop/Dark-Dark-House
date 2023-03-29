@@ -1750,7 +1750,7 @@ RectTransform:
   m_GameObject: {fileID: 190871909}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.01, y: 1.01, z: 1.01}
   m_Children:
   - {fileID: 1118318331}
   - {fileID: 1938766162}
@@ -6258,7 +6258,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 550279370}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.4, y: -13.6, z: 0}
+  m_LocalPosition: {x: -1.7, y: -18.9, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 374534582}
@@ -9296,6 +9296,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 1411201584}
+  settingsMenu: {fileID: 990900623}
   mainCanvas: {fileID: 190871909}
   AllSounds: {fileID: 1348918291}
 --- !u!114 &857997241
@@ -9828,7 +9829,7 @@ RectTransform:
   m_GameObject: {fileID: 967396962}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.01, y: 1.01, z: 1.01}
   m_Children:
   - {fileID: 832213300}
   - {fileID: 1740320594}
@@ -9941,7 +9942,7 @@ RectTransform:
   m_GameObject: {fileID: 990900623}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.2283, y: 1.2283, z: 1.2283}
+  m_LocalScale: {x: 1.01, y: 1.01, z: 1.01}
   m_Children:
   - {fileID: 1358642438}
   m_Father: {fileID: 1909215747}
@@ -12176,7 +12177,7 @@ RectTransform:
   m_GameObject: {fileID: 1358642437}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_LocalScale: {x: 1.86, y: 1.86, z: 1.86}
   m_Children:
   - {fileID: 682348804}
   - {fileID: 600153217}
@@ -12189,7 +12190,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -0.0000019073486}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 222.093, y: 361.193}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1358642439
@@ -12254,6 +12255,7 @@ GameObject:
   - component: {fileID: 1382924139}
   - component: {fileID: 1382924141}
   - component: {fileID: 1382924140}
+  - component: {fileID: 1382924142}
   m_Layer: 0
   m_Name: terror radius
   m_TagString: Untagged
@@ -12303,7 +12305,20 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 2.6
+  m_Radius: 6
+--- !u!114 &1382924142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1382924138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2237067745a401a42bdcbe6589f03f80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ghostLocation: 5
 --- !u!1 &1397131008
 GameObject:
   m_ObjectHideFlags: 0
@@ -12490,7 +12505,7 @@ RectTransform:
   m_GameObject: {fileID: 1411201584}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.01, y: 1.01, z: 1.01}
   m_Children:
   - {fileID: 2104889963}
   m_Father: {fileID: 1909215747}

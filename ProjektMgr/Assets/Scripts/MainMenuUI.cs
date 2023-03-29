@@ -82,14 +82,12 @@ public class MainMenuUI : MonoBehaviour
             sliderMouse.SetActive(true);
 
             PlayerPrefs.SetInt("mouseInput", 1);
-            Debug.Log(PlayerPrefs.GetInt("mouseInput"));
         }
         if(value == 1)
         {
             sliderKeyboard.SetActive(true);
             sliderMouse.SetActive(false);
             PlayerPrefs.SetInt("mouseInput", 0);
-            Debug.Log(PlayerPrefs.GetInt("mouseInput"));
 
         }
     }

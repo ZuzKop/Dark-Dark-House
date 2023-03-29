@@ -87,6 +87,7 @@
     <Compile Include="Assets\UAP\Plugins\Android\AndroidTTS.cs" />
     <Compile Include="Assets\UAP\Scripts\UI Components\AccessibleToggle.cs" />
     <Compile Include="Assets\UAP\Scripts\Utility\UAP_ScrollControl.cs" />
+    <Compile Include="Assets\Scripts\SilenceHeartbeat.cs" />
     <Compile Include="Assets\UAP\Scripts\Core\UAP_BaseElement.cs" />
     <Compile Include="Assets\Scripts\DirectionVolume.cs" />
     <Compile Include="Assets\UAP\Scripts\UI Components\AccessibleSlider.cs" />

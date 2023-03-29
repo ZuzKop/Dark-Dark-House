@@ -5,27 +5,38 @@ using UnityEngine;
 public class HeartbeatRadius : MonoBehaviour
 {
     public AudioSource heartbeat;
+    private bool silent;
 
     // Start is called before the first frame update
     void Start()
     {
+        silent = false;
         heartbeat.volume = 0f;
     }
 
+    public void SetSilent(bool flag)
+    {
+        silent = flag;
+    }
+    public bool GetSilent()
+    {
+        return silent;
+    }
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if(col.transform.tag == "Player" )
+        if(col.transform.tag == "Player" && !silent)
         {
             heartbeat.volume = 1f;
-        }
-        else
-        {
-            heartbeat.volume = 0f;
+            Debug.Log("unsilencing");
         }
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
+    private void OnTriggerExit2D(Collider2D col)
     {
-        heartbeat.volume = 0f;
+        if (col.transform.tag == "Player")
+        {
+            heartbeat.volume = 0f;
+            Debug.Log("silencing");
+        }
     }
 }

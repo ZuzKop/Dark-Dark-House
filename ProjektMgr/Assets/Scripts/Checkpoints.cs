@@ -30,11 +30,13 @@ public class Checkpoints : MonoBehaviour
         {
             SpawnPlayerOnCheckpoint();
         }
+        else
+        {
+            player.transform.position = allChildren[1].transform.position;
+        }
 
 
         checkpointReached = PlayerPrefs.GetInt("checkpointReached", 1);
-
-        Debug.Log(PlayerPrefs.GetInt("checkpointReached"));
 
     }
 
@@ -50,7 +52,6 @@ public class Checkpoints : MonoBehaviour
                 checkpointReached = PlayerPrefs.GetInt("checkpointReached");
             }
 
-        Debug.Log(PlayerPrefs.GetInt("checkpointReached"));
         }
     }
 

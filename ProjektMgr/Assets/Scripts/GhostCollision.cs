@@ -50,7 +50,7 @@ public class GhostCollision : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (nodeNumber >= 2)
+        if (nodeNumber >= 2 && !gameManager.GetComponent<PlayerStatus>().IsPaused())
         {
             transform.position = Vector3.MoveTowards(transform.position, nextNode, Time.deltaTime * speed);
 

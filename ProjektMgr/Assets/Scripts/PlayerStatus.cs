@@ -14,6 +14,7 @@ public class PlayerStatus : MonoBehaviour
     private bool hasGun;
 
     public GameObject pauseMenu;
+    public GameObject settingsMenu;
     public GameObject mainCanvas;
     public GameObject AllSounds;
 
@@ -44,7 +45,12 @@ public class PlayerStatus : MonoBehaviour
     {
         if (Input.GetKeyDown("escape"))
         {
-            if (paused)
+            if(paused && settingsMenu.activeSelf )
+            {
+                pauseMenu.SetActive(true);
+                settingsMenu.SetActive(false);
+            }
+            else if (paused)
             {
                 UAP_AccessibilityManager.BlockInput(true);
 
@@ -55,7 +61,6 @@ public class PlayerStatus : MonoBehaviour
                 pauseMenu.SetActive(false);
 
             }
-
             else
             {
                 UAP_AccessibilityManager.BlockInput(false);
