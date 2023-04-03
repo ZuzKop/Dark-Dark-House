@@ -17,7 +17,6 @@ public class PlayerMovement : MonoBehaviour
 
     private GameObject gameManager;
 
-    // Start is called before the first frame update
     void Start()
     {
         Cursor.visible = false;
@@ -25,8 +24,8 @@ public class PlayerMovement : MonoBehaviour
 
         movementSpeed = 2f;
 
-        keySensitivity = PlayerPrefs.GetFloat("keyboardSensitivity");
-        mouseSensitivity = PlayerPrefs.GetFloat("mouseSensitivity");
+        keySensitivity = PlayerPrefs.GetFloat("keyboardSensitivity", 0.55f);
+        mouseSensitivity = PlayerPrefs.GetFloat("mouseSensitivity", 3f);
 
         gameManager = GameObject.FindGameObjectWithTag("GameManager");
 
@@ -44,7 +43,7 @@ public class PlayerMovement : MonoBehaviour
         if (!gameManager.GetComponent<PlayerStatus>().IsPaused())
         {
             //keyboard
-            if(PlayerPrefs.GetInt("mouseInput") == 0)
+            if(PlayerPrefs.GetInt("mouseInput", 1) == 0)
             {
                 if (Input.GetKey("right"))
                 {
@@ -76,7 +75,7 @@ public class PlayerMovement : MonoBehaviour
 
 
             //mouse
-            if (PlayerPrefs.GetInt("mouseInput") == 1)
+            if (PlayerPrefs.GetInt("mouseInput", 1) == 1)
             {
 
                 transform.Rotate(0, 0, -Input.GetAxis("Mouse X") * mouseSensitivity);

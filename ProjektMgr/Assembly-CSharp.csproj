@@ -62,7 +62,6 @@
     <Compile Include="Assets\Scripts\CurrentLocation.cs" />
     <Compile Include="Assets\UAP\Plugins\CustomTTS\Custom_TTS_Template.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
-    <Compile Include="Assets\Scripts\DirectionSoundPitch.cs" />
     <Compile Include="Assets\UAP\Examples\UI Navigation Example\Scripts\DemoHelper.cs" />
     <Compile Include="Assets\UAP\Scripts\Utility\UAP_SelectionGroup.cs" />
     <Compile Include="Assets\Scripts\TextOnScreen.cs" />
@@ -74,6 +73,7 @@
     <Compile Include="Assets\UAP\Plugins\iOS\iOSTTS.cs" />
     <Compile Include="Assets\UAP\Scripts\UI Components\AccessibleLabel_3D.cs" />
     <Compile Include="Assets\UAP\Plugins\CustomTTS\WebSpeechAPI_TTS.cs" />
+    <Compile Include="Assets\Scripts\TraversePauseMenu.cs" />
     <Compile Include="Assets\Scripts\GhostCollision.cs" />
     <Compile Include="Assets\Scripts\PickingUpKeys.cs" />
     <Compile Include="Assets\Scripts\HeartbeatRadius.cs" />
@@ -109,6 +109,7 @@
     <Compile Include="Assets\UAP\Scripts\Utility\UAP_BackCloseEventListener.cs" />
     <Compile Include="Assets\Scripts\OpeningDoors.cs" />
     <Compile Include="Assets\UAP\Scripts\UI Components\AccessibleButton.cs" />
+    <Compile Include="Assets\Scripts\TraverseMenus.cs" />
     <Compile Include="Assets\UAP\Examples\3D Objects Example\Scripts\uGUI3DExampleGameLogic.cs" />
     <Compile Include="Assets\UAP\Plugins\x86_64\WindowsTTS.cs" />
     <Compile Include="Assets\Scripts\GhostCounting.cs" />

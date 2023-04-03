@@ -18,6 +18,7 @@ public class PlayerStatus : MonoBehaviour
     public GameObject mainCanvas;
     public GameObject AllSounds;
 
+    public GameObject gameOverScreen;
 
     private bool paused;
 
@@ -49,6 +50,7 @@ public class PlayerStatus : MonoBehaviour
             {
                 pauseMenu.SetActive(true);
                 settingsMenu.SetActive(false);
+                GetComponent<TraversePauseMenu>().PauseMenuEvent();
             }
             else if (paused)
             {
@@ -59,14 +61,14 @@ public class PlayerStatus : MonoBehaviour
                 AllSounds.SetActive(true);
                 mainCanvas.SetActive(true);
                 pauseMenu.SetActive(false);
+                GetComponent<TraversePauseMenu>().ResetEvent();
 
             }
-            else
+            else if (!gameOverScreen.activeSelf)
             {
                 UAP_AccessibilityManager.BlockInput(false);
 
                 paused = true;
-
 
                 Cursor.visible = true;
                 Cursor.lockState = CursorLockMode.None;
@@ -74,6 +76,7 @@ public class PlayerStatus : MonoBehaviour
                 AllSounds.SetActive(false);
                 mainCanvas.SetActive(false);
                 pauseMenu.SetActive(true);
+                GetComponent<TraversePauseMenu>().PauseMenuEvent();
             }
 
             
@@ -120,7 +123,6 @@ public class PlayerStatus : MonoBehaviour
         return levelId;
     }
 
-    // Start is called before the first frame update
     public void SetLocation(int id)
     {
         room = id;

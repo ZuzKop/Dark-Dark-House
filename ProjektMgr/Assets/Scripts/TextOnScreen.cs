@@ -18,10 +18,8 @@ public class TextOnScreen : MonoBehaviour
 
     private int lvlId;
 
-    // Start is called before the first frame update
     void Start()
     {
-        ReadLocation();
         player = GameObject.FindGameObjectWithTag("Player");
         gameManager = GameObject.FindWithTag("GameManager");
 
@@ -34,7 +32,6 @@ public class TextOnScreen : MonoBehaviour
 
     }
 
-// Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.W))
@@ -104,7 +101,6 @@ public class TextOnScreen : MonoBehaviour
                             dist = "";
                         }
 
-                        //Debug.Log(hit.distance);
                         itemString = hit.transform.tag + dist;
                         break;
 
@@ -135,7 +131,6 @@ public class TextOnScreen : MonoBehaviour
                 item.text = itemString;
                 StartCoroutine(ItemTextFade());
                 UAP_AccessibilityManager.Say(item.text.ToString());
-                //Debug.Log(itemString);
             }
         }
     }

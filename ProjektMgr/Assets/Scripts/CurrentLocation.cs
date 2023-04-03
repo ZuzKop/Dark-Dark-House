@@ -91,6 +91,7 @@ public class CurrentLocation : MonoBehaviour
         if (col.transform.tag == "Player")
         {
             locationText.text = location;
+            Debug.Log(" reading from CurrentLocation");
             gameManager.GetComponent<TextOnScreen>().ReadLocation();
             gameManager.GetComponent<PlayerStatus>().SetLocation(locationId);
 

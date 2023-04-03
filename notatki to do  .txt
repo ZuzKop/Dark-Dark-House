@@ -1,6 +1,7 @@
 known issues:
 -doooooors
 -jak ma sie save i odpala sie level to najpierw mowi room 0 a potem np. room 5 (chyba fixed ale nie wiem czy nie zepsułam tej gry :nmn:)
+-when pausing and unpausing the game, music resets 
 
 needs:
 -main menu music
@@ -9,4 +10,3 @@ wants:
 -'Items in this room' counter
 -przed poziomem dac moze opis slowny jak wyglada plan domu?
 
-pls test if credits is supported by screen-reader
