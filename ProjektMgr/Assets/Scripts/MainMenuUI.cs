@@ -29,6 +29,12 @@ public class MainMenuUI : MonoBehaviour
 
         keyboardSliderValue.value = PlayerPrefs.GetFloat("keyboardSensitivity", 0.55f);
         mouseSliderValue.value = PlayerPrefs.GetFloat("mouseSensitivity", 3f);
+
+        if(SceneManager.GetActiveScene().buildIndex == 0)
+        {
+
+            UAP_AccessibilityManager.BlockInput(false);
+        }
     }
 
     public void QuitGame()

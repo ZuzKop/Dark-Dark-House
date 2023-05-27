@@ -35,6 +35,8 @@ public class GameOver : MonoBehaviour
         skippable = false;
         dead = false;
         tutorialWin = false;
+
+        lvlId = SceneManager.GetActiveScene().buildIndex;
     }
 
     // Update is called once per frame
